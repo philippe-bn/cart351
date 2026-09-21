@@ -1,2 +1,1 @@
-# CART-351-SAMPLE-REPO
- 
+Philippe Beauchemin's coursework repository for CART 351 - Networks and Navigation
