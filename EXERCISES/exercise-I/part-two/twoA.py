@@ -46,7 +46,7 @@ print("Expected output: ['delta', 'epsilon']")
 # statement displays the last two members of the list "greek" (defined above).
 # Use a negative number for "foo".
 
-foo = 0
+foo = -2
 print(greek[foo:])
 
 #------------------------------------------------------------------------
@@ -59,7 +59,7 @@ print("Expected output: True")
 # that the print statement displays "True."
 
 vegetables= ["aubergines", "carrots", "turnips", "fiddleheads", "artichokes"]
-word_to_look_for = "carret"
+word_to_look_for = "carrots"
 print(word_to_look_for in vegetables)
 
 #------------------------------------------------------------------------
@@ -72,7 +72,8 @@ print("Expected output: ['artichokes', 'aubergines', 'carrots', 'fiddleheads', '
 # the list "vegetables" (defined above) in alphabetical order. (Use the "sort"
 # function.
 
-print(vegetables)
+vegetables.sort()
+print(vegetables) #I dont understand why I can't write sort inside the print
 
 #------------------------------------------------------------------------
 
@@ -84,7 +85,7 @@ print("Expected output: ['artichokes', 'aubergines', 'carrots', 'fiddleheads', '
 # list "vegetables" (defined above). The print statement should display the updated
 # list.
 
-# write your statement here
+vegetables.append("radishes") # write your statement here
 print(vegetables)
 
 #------------------------------------------------------------------------
@@ -103,6 +104,8 @@ print("  radishes")
 # "vegetables" (defined above). (The list should contain the item that you
 # added to the list in task 17.)
 
+for vegetable in vegetables:
+	print(vegetable)
 
 
 
@@ -123,7 +126,8 @@ print("  Radishes")
 # "vegetables" (defined above), but with the first letter of each item capitalized.
 # (The list should contain the item that you added to the list in task 17.)
 
-
+for vegetable in vegetables:
+	print(vegetable.title())
 
 
 #------------------------------------------------------------------------
@@ -139,8 +143,8 @@ print("  9-18-25")
 # statement displays "9-18-25".
 
 
-separator = "?"
-glue = "?"
+separator = "/"
+glue = "-"
 parts = "9/18/25".split(separator)
 print(parts[-1])
 print(glue.join(parts))
@@ -161,11 +165,11 @@ print("Expected output: alpha, beta, gamma, delta, epsilon, zeta, eta, theta")
 
 greek = ["alpha", "beta", "gamma", "delta", "epsilon","zeta"]
 new_letters = "eta theta"
-new_letters_list = [] # <-- replace this
+new_letters_list = new_letters.split()
 
 for letter_name in new_letters_list:
-	pass # <-- and replace this
+	greek.append(letter_name)
 
-glue = "?" # <-- and replace this
+glue = ", "
 
 print(glue.join(greek))
