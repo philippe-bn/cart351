@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pineapples and users :)</title>
+</head>
+<body>
+    <h1>pineapples and users</h1>
+     {% if user_bool %}
+        <p style ="color:rgb(122, 133, 216); text-transform: uppercase"> User is Logged In</p> 
+        <img src = "../static/images/pineapple_2.jpg"/>
+     {% else %}
+        <p style ="color:rgb(216, 122, 216); text-transform: uppercase"> User is not Logged In</p> 
+        <img src = "../static/images/Lemon.jpg"/>
+    {% endif %}
+ 
+</body>
+</html>
