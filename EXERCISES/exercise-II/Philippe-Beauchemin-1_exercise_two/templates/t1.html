@@ -1,0 +1,34 @@
+<!-- will be a child of base-->
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class = "t1-collect">
+
+<div class= "formContainer">
+<form id = "insertT1Data" action = "/getSearchCriteria">
+<h3> NASA </h3>
+<fieldset>
+    <p>
+        <label>NASA API SEARCH CRITERIA:</label>
+        <input type="text" placeholder="Search for..." size="24" maxlength = "40" name = "input_text" required>
+    </p>
+    <p>
+        <label></label>
+        <input id = "submitT1" type = "submit" name = "submit" value = "Launch search!" id =buttonS />
+    </p>
+</fieldset>
+</form>
+</div>
+
+<div class="formDisplayContainer">
+{% if have_results == True %}
+    <p>
+        {{description}}
+    </p>
+    <img src = {{imgPath}} />
+{% endif %}
+</div>
+</section>
+
+{% endblock %}
