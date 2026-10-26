@@ -1,0 +1,18 @@
+<!-- will be a child of base-->
+{% extends "base.html" %}
+{% block content %}
+  <section class = "thank-collect">
+        {%if plantData%}
+        Thank you {{plantData['o_name']}} for adding a new plant into the plant repo!
+        Additional Plant info:
+            
+        {% for p_item in plantData %}
+        {{p_item}}: {{plantData[p_item]}}
+            
+        {%endfor %}
+        {%else%}
+         Thank you for adding a new plant into the plant repo!
+
+        {%endif %}
+</section>
+{% endblock %}
