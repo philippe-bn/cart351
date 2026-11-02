@@ -16,8 +16,6 @@ def t1():
 #*************************************************
 @app.route("/getSearchCriteria")
 def getSearchCriteria():
-    print("HERE")
-    #fill me in :
     query = request.args['input_text']
     url = f'https://images-api.nasa.gov/search?q={query}&media_type=image'
     response = requests.get(url)
@@ -35,14 +33,22 @@ def getSearchCriteria():
 
 #*************************************************
 # #Task-2: GET REQUEST
-# @app.route("/t2")
-# def t2():
-#     return render_template("t2.html")
+@app.route("/t2")
+def t2():
+    return render_template("t2.html")
 #*************************************************
 @app.route("/getSearchCriteria_adv")
 def getSearchCriteria_adv():
- #fill me in :
-    pass
+    query = request.args['input_text']
+    url = f'https://images-api.nasa.gov/search?q={query}&media_type=image'
+    response = requests.get(url)
+    data = response.json()
+    for imgFromNasa in data['collection']['items']:
+        singleImage = (imgFromNasa["links"][0]["href"])
+        singleImage = singleImage.replace(' ', '%20')
+        encodedImageLinks = []
+        encodedImageLinks.append(singleImage)
+    return render_template("t2.html",images=encodedImageLinks)
 #*************************************************
 
 #run
