@@ -1,5 +1,6 @@
 
 from flask import Flask,render_template,request,url_for,session,redirect
+import os
 app = Flask(__name__)
     # Details on the Secret Key: https://flask.palletsprojects.com/en/2.3.x/config/#SECRET_KEY
     # NOTE: The secret key is used to cryptographically-sign the cookies used for storing
@@ -109,5 +110,41 @@ def deleteSession():
     session.pop('data_a', default=None)
     session.pop('data_b', default=None)
     return redirect(url_for('modifySessionData'))
+
+# aroute
+@app.route('/getForm')
+def getFetchForm():
+    return render_template("form_fetch.html")
+
+# for the get
+@app.route('/getDataFromForm')
+def getDataFromForm():
+    app.logger.info(request.args)
+    return ({"data_received":"success",
+    "owner":request.args['o_name'],
+    "plantname":request.args['p_name']})
+
+# another route
+@app.route('/addPlantExtended')
+def addPlantExtended():
+    return render_template("addPlantExtended.html")
+
+UPLOAD_FOLDER = 'static/uploads' 
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 # 16 MB limit
+
+@app.route("/postPlantFormFetch",methods = ['POST'])
+def postPlantFormFetch():
+     #key is the same as in the form :)
+    uploadedfile = request.files['the_file']
+    #save file to uploads folder
+    filePath = os.path.join(app.config['UPLOAD_FOLDER'], uploadedfile.filename)
+    app.logger.info(filePath)
+    uploadedfile.save(filePath)
+    app.logger.info(uploadedfile.filename)
+     # the textual data will be in request.form 
+    app.logger.info(request.form)
+    #return the file name + path
+    return({"imagePath":filePath})
 
 app.run(debug=True)
