@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect, url_for,session 
 # use flask_pymongo instead of  normal pymongo (simplifies integration)
 from flask_pymongo import PyMongo
 
@@ -16,6 +16,7 @@ app = Flask(__name__)
 
 # set a config var
 app.config["MONGO_URI"] = uri
+app.secret_key = 'BAD_SECRET_KEY'
 mongo = PyMongo(app)
 try:
     #get details of the client
@@ -25,7 +26,13 @@ try:
     #get collection
     print (mongo.db.plantRepo)
     print("You successfully connected to MongoDB!")
-    result = mongo.db.plantRepo.insert_one({"testKeyMon":"testValueMon"})
-    print(result)
+    # result = mongo.db.plantRepo.insert_one({"testKeyMon":"testValueMon"})
+    # print(result)
 except Exception as e:
     print(e)
+
+
+@app.route('/')
+def index():
+    return render_template("index.html")
+app.run(debug = True)
