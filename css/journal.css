@@ -5,23 +5,30 @@ h3{
   text-align: center;
 }
 
+body{
+  background: #ff7300;
+  font-family: "Comic Relief", system-ui;
+}
+
 main{
-  background:#FAEBF8;
+  background:#1aff25;
   padding:10px;
   display:flex;
   flex-wrap:wrap;
   width:90vw;
   margin:0 auto;
+  border: none;
+  border-radius: 24px;
 }
 
 section{
   background-color:#CF4EC2;
   width:40vw;
-  border: none;
-  border-radius: 12px;
   margin-top:10px;
   margin-left:2vw;
   overflow:hidden;
+  border: none;
+  border-radius: 12px;
 }
 
 section h4{
