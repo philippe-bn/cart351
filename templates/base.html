@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>CART 351 - Philippe Beauchemin</title>
+  <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+
+<body>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>This page is <strong>beautiful</strong>. It was made by <em> me </em> for the content expected. I am FREE (and <strong>should</strong>) be rewarded for having rewritten the markup, added a layout (css), images, styling, some character, etc ...</p>
+    </footer>
+</body>
+
+</html>

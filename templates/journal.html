@@ -1,17 +1,20 @@
-<!DOCTYPE html>
-<html>
+<!-- will be a child of base-->
+{% extends "base.html" %}
+
 <head>
   <title>JOURNAL FOR CART 351 - Philippe Beauchemin </title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" type="text/css" href="css/journal.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/journal.css')}}">
 </head>
-<body>
+
+{% block header %}
     <!-- the header div -->
-  <header>
     <h2>JOURNAL FOR CART 351</h2>
-  <header>
+{% endblock %}
+
+
+{% block content %}
   <!-- the main div -->
-  <main>
 	<section>
 	<h4> WEEK 1: SEPT 14th </h4>
 	<article> This week I set up the Python environment I will be working in in the next few weeks. We will be using Miniconda which is a smaller Conda version than Anaconda. I am looking forward to understanding all the terms that were used in the instructions for setting up Python because although I was able to set it up, a lot of the vocabulary went over my head. I also had to redo the setup for my Github - I had created a new repo last week quickly as well as one for CART353 but I only realized a few days later that I was supposed to populate it with the files from the Github Sample Repo. I accidentally used the clone function instead of simply downloading the files into my pre-existing folder so I went through the ordeal of deleting my repo, cloning, creating a new repo, copying the files into it and then deleting the local clone. All is well now and I am ready to take on the next coding challenges! PS. Styling for this page is on its way... </article>
@@ -76,10 +79,5 @@
 	<h4> WEEK 13: DEC 7th </h4>
 	<article> COMING UP... A highly engaged journal entry showing reflection on process, awareness of user experience, and engagement with other projects. </article>
 	</section>
-</main>
-  <!-- the footer div -->
-<footer>
-<p>This page is <strong>beautiful</strong>. It was made by <em> me </em> for the content expected. I am FREE (and <strong>should</strong>) be rewarded for having rewritten the markup, added a layout (css), images, styling, some character, etc ...</p>
-</footer>
-</body>
-</html>
+
+{% endblock %}
