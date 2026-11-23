@@ -17,6 +17,8 @@ main{
 section{
   background-color:#CF4EC2;
   width:40vw;
+  border: none;
+  border-radius: 12px;
   margin-top:10px;
   margin-left:2vw;
   overflow:hidden;
