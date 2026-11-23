@@ -1,7 +1,14 @@
-
 h2{
   text-align: center;
 }
 h3{
   text-align: center;
+}
+
+section{
+  background-color:#CF4EC2;
+  width:40vw;
+  margin-top:10px;
+  margin-left:2vw;
+  overflow:hidden;
 }
