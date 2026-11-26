@@ -1,3 +1,3 @@
-# CART-351-SAMPLE-REPO
-PLACE FOR EXERCISES
+# EXERCISES
+This is where I store the exercises I completed.
 
